@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Team Roster{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h3 class="text-center text-white">Team Roster: {{ team.name }}</h3>
+        
+        {% if players %}
+            <div class="card">
+                <div class="card-body">
+                    <ul class="list-group">
+                        {% for player in players %}
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div class="player-info">
+                                    <h5>{{ player.name }}</h5>
+                                    <p>Position: {{ player.position }}</p>
+                                    <p>Age: {{ player.age }}</p>
+                                </div>
+                                <div class="player-status">
+                                    <img src="{{ url_for('static', filename='images/profile.png') }}" alt="profile image" class="img-fluid" style="max-width: 100px; height: auto;">
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% else %}
+            <div class="alert alert-info text-center" role="alert">
+            <h5>No players found for this team.</h5>
+            <p>Check back later or add new players to the roster.</p>
+            </div>
+        {% endif %}
+        
+        <div class="text-center mt-3">
+            <a href="{{ url_for('index') }}" class="btn btn-primary">Back to Teams</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Hockey Website{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card p-3 mb-4">
+            <h3 class="text-center">Here you can view the score</h3>
+            <p class="text-center">Do you want to add a game? <a href="{{ url_for('add_game') }}">Add Game</a></p>
+        </div>
+
+        {% if games %}
+            {% for game in games %}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="">
+                            <div>
+                                <h5 class="card-title">Date: {{ game.date }}</h5>
+                                <p class="card-text">Location: {{ game.location }}</p>
+                                <p class="card-text">Match: {{ game.home_team }} vs {{ game.away_team }}</p>
+                                <p class="card-text">Score: {{ game.final_score }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No games recorded yet!</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

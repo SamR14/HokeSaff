@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #CAE9FF;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    /* background-image: url("images/background.jpeg"); */
+    background-image: url(images/vecteezy.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center -100px;
+}
+
+
+/* header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} */
+
+.white{
+    color: white;
+}
+
+.top{
+    background-color: #5fa6da;
+    color: #ffffff;
+}
+
+.stats{
+    background-color: #a6d4f5;
+}
+
+.logo {
+    height: 70px;
+}
+
+nav {
+    background-color: #1B4965;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #eee;
+    text-align: center;
+    padding: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    padding: 8px;
+}
+
+/* ul li:hover {
+    background-color: #e0e0e0;
+} */
+
+.no_underline a {
+    text-decoration: none;
+    /* display: block;
+    padding: 8px; */
+}
+
+footer{
+    background-color: #1B4965;
+}
+
+.phone{
+    display: none;
+}
+
+@media (max-width: 576px) {
+    .d-flex {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .card img {
+        margin-bottom: 10px;
+    }
+    .computer {
+        display: none;
+    }
+    .phone {
+        display: block;
+    }
+    body{
+        background-position: center 0px;
+    }
+}

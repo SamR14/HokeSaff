@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Player statistics{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <div class="card mb-3 p-3">
+            <h3 class="text-center">Here you are able to view all statistics about players</h3>
+        </div>
+        <div class="computer">
+            <div class="row top">
+                <div class="d-flex justify-content-between align-items-start">
+                    <h5 class="col-6">Name</h5>
+                    <h5 class="col-2">Assists</h5>
+                    <h5 class="col-2">Shots on Goal</h5>
+                    <h5 class="col-2">Penalty Minutes</h5>
+                </div>
+            </div>
+            {% if stats %}
+                {% for stat in stats %}
+                    <div class="row stats">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <h5 class="col-6">{{ stat.name }}</h5>  <!-- Display player's name -->
+                            <h5 class="col-2">{{ stat.assists }}</h5>
+                            <h5 class="col-2">{{ stat.shots_on_goal }}</h5>
+                            <h5 class="col-2">{{ stat.penalty_minutes }}</h5>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No player statistics available!</p>
+            {% endif %}
+        </div>
+        <div class="phone">
+            {% if stats %}
+                {% for stat in stats %}
+                    <div class="card mb-2 stats teksts">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <h5 class="">Name: {{ stat.name }}</h5>  <!-- Display player's name -->
+                            <h5 class="">Assists: {{ stat.assists }}</h5>
+                            <h5 class="">Shots on goal: {{ stat.shots_on_goal }}</h5>
+                            <h5 class="">Penalty minutes{{ stat.penalty_minutes }}</h5>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No player statistics available!</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
