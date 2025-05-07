@@ -11,6 +11,9 @@ body {
     background-position: center -100px;
     background-repeat: no-repeat;
     position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* header {
@@ -53,14 +56,22 @@ nav a:hover {
     text-decoration: underline;
 }
 
+.container {
+    flex: 1 0 auto;
+    padding-bottom: 20px;
+}
+
 main {
     padding: 20px;
 }
 
 footer {
-    background-color: #eee;
+    background-color: #1B4965;
     text-align: center;
     padding: 10px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
 }
 
 ul {
